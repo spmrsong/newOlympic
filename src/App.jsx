@@ -30,18 +30,26 @@ const tStyle = {
 };
 
 const App = () => {
-  const [counthies, setCounthies] = useState([]);
+  const [countries, setCountries] = useState([]);
   const [name, setName] = useState("");
   const [gold, setGold] = useState("");
   const [silver, setSilver] = useState("");
   const [bronze, setBronze] = useState("");
 
+  // 코드 업데이트
   // const handleUpdateCounthy = (event) => {
   //   event.preventDefault();
-  //   // 수정로직
+
+  //   // 리스트에서 등록된걸 찾아서 해당 객체를 변경한다
+  //   const targetUpdate = countries.find();
+
+  //   const updateList = countries.map();
   // };
 
-  // const handleDelete = () => {};
+  // // 코드 삭제
+  // const handleDeleteCountry = (id) => {
+  //   countries.filter(id);
+  // };
 
   return (
     <div style={hStyle}>
@@ -50,14 +58,14 @@ const App = () => {
         onSubmit={function (e) {
           e.preventDefault();
 
-          const newCounthies = {
+          const newCountries = {
             id: new Date().getTime(),
             name: name,
             gold: gold,
             silver: silver,
             bronze: bronze,
           };
-          setCounthies([...counthies, newCounthies]);
+          setCountries([...countries, newCountries]);
         }}
         style={formStyle}
       >
@@ -119,7 +127,7 @@ const App = () => {
             <th>동메달</th>
           </thead>
           <tbody>
-            {counthies
+            {countries
               // .sort(a, b) => {}
               .map((c) => (
                 <tr key={c.id}>
